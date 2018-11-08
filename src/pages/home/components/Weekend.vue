@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
           <img
             class="item-img" :src="item.imgUrl"/>
@@ -19,25 +19,8 @@
 <script>
 export default {
   name: 'Weekend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1509/2f/bbb38e80bf749f.jpg_r_640x214_2590c69d.jpg',
-        title: '曲江海洋极地公园',
-        desc: 'AAAA景区'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1509/2f/bbb38e80bf749f.jpg_r_640x214_2590c69d.jpg',
-        title: '曲江海洋极地公园',
-        desc: 'AAAA景区'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1509/2f/bbb38e80bf749f.jpg_r_640x214_2590c69d.jpg',
-        title: '曲江海洋极地公园',
-        desc: 'AAAA景区'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -51,7 +34,7 @@ export default {
   .item-img-wrapper
     overflow hidden
     height 0
-    padding-bottom 33.9%
+    padding-bottom 38%
     .item-img
       width 100%
   .item-info
