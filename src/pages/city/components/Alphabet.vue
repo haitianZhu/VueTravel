@@ -53,7 +53,7 @@ export default {
         if (this.timer) {
           clearTimeout(this.timer)
         }
-        setTimeout(() => {
+        this.timer = setTimeout(() => {
           const touchY = e.touches[0].clientY - 80
           const index = Math.floor((touchY - this.startY) / this.$refs['A'][0].clientHeight)
           this.$emit('letterClick', this.letters[index])
